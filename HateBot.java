@@ -5,10 +5,13 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -37,7 +40,7 @@ public class HateBot {
 
         List<String> words = Files.readAllLines(new File("words.txt").toPath());
 
-        List<String> toTweet = new CopyOnWriteArrayList<>();
+        List<String> toTweet = new ArrayList<>();
         toTweet.addAll(words.subList(index, words.size() - 1));
 
         ConfigurationBuilder cb = new ConfigurationBuilder();
