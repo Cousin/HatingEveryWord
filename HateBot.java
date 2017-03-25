@@ -59,17 +59,7 @@ public class HateBot {
 
     }
 
-    private Twitter twitter;
-    private List<String> toTweet;
-    private int index;
-    private File indexFile;
-
     public HateBot(Twitter twitter, File indexFile, List<String> toTweet, int index) throws IOException {
-
-        this.twitter = twitter;
-        this.toTweet = toTweet;
-        this.indexFile = indexFile;
-        this.index = index;
 
         PrintWriter writer = new PrintWriter(new FileOutputStream(indexFile, false));
 
